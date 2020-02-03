@@ -1,0 +1,7 @@
+@mixin dot_fonts($with, $height) {
+  width: $with;
+  height: $height;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

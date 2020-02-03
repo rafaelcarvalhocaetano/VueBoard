@@ -1,0 +1,62 @@
+@import './color.scss';
+@import './mixis.scss';
+
+#card {
+  width: 400px;
+  height: auto;
+  padding: 10px;
+  background-color: #FFF;
+  border: 1px solid rgb(236, 235, 235);
+  border-radius: 3px;
+  .card-header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    img {
+      width: 40px;
+      height: 40px;
+      background-color: $font_color;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .card-header-title {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      h2 {
+        font-size: 14px;
+        font-weight: bold;
+        color: $font_color;
+        @include dot_fonts(340px, null);
+      }
+      small {
+        width: 340px;
+        font-size: 12px;
+        line-height: 20px;
+        color: $font_color;
+        opacity: 0.4;
+        @include dot_fonts(340px, null);
+      }
+    }
+  }
+  .card-body {
+    padding: 5px 0 10px 0;
+    p {
+      text-align: justify;
+      max-height: 100px;
+      font-size: 14px;
+      color: $font_color;
+      opacity: 0.9;
+    }
+  }
+  .card-link {
+    margin-bottom: 10px;
+    .card-link-action {
+      text-decoration: none;
+      font-size: 14px;
+      color: $primary;
+    }
+  }
+}
