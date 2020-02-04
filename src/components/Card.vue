@@ -18,15 +18,14 @@
 
 <script>
 export default {
-  data() {
-    return {
-      card: {
-        img: null,
-        name: null,
-        title: null,
-        description: null,
-        link: null
-      }
+  props: {
+    card: {
+      id: null,
+      img: null,
+      name: null,
+      title: null,
+      description: null,
+      link: null,
     }
   }
 }
