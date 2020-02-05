@@ -1,12 +1,18 @@
 <template>
   <div id="board">
-    <FormBoard class="form" />
-    <Card
-      class="cards"
-      v-for="card in cards"
-      :key="card.id"
-      :card="card"
-    />
+    <div class="form">
+      <FormBoard/>
+    </div>
+    <div class="card-body">
+      <h1>Users</h1>
+    <div class="cards">
+      <Card
+        v-for="card in cards"
+        :key="card.id"
+        :card="card"
+      />
+    </div>
+    </div>
   </div>
 </template>
 
