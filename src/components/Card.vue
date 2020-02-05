@@ -1,7 +1,7 @@
 <template>
   <div id="card">
     <div class="card-header">
-      <img src="./../assets/imgs/exemple.jpeg" alt="User">
+      <img :src="card.img" alt="User">
       <div class="card-header-title">
         <h2>{{ card.name ? card.name : 'Sem Nome' }}</h2>
         <small>{{ card.title ? card.title : 'Sem título'}}</small>

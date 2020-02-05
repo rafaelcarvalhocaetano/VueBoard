@@ -2,18 +2,21 @@
 @import './mixis.scss';
 
 #card {
-  width: 400px;
-  height: auto;
+  width: 100px;
+  height: 150px;
   padding: 10px;
   background-color: #FFF;
   border: 1px solid rgb(236, 235, 235);
-  border-radius: 3px;
+  border-radius: 3px;  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .card-header {
     width: 100%;
-    height: 50px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 10px;
     img {
       width: 40px;
       height: 40px;
@@ -42,8 +45,11 @@
     }
   }
   .card-body {
-    padding: 5px 0 10px 0;
-    p {
+    width: 100%;
+    p {      
+      max-width: 400px;
+      overflow: hidden;
+      text-overflow: ellipsis;
       text-align: justify;
       max-height: 100px;
       font-size: 14px;
@@ -52,7 +58,6 @@
     }
   }
   .card-link {
-    margin-bottom: 10px;
     .card-link-action {
       text-decoration: none;
       font-size: 14px;

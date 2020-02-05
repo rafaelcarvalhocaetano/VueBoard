@@ -1,5 +1,16 @@
 #board {
   width: 100vw;
   height: 100vh;
-  background-color: #CCC;
+  background-color: rgb(247, 243, 243);
+  display: flex;
+  // flex-wrap: wrap;
+
+  .form {
+    width: 30vw;
+    background-color: red;
+  }
+  .cards {
+    width: 70vw;
+  }
+
 }

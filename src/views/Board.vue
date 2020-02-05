@@ -1,7 +1,8 @@
 <template>
   <div id="board">
-    <FormBoard />
+    <FormBoard class="form" />
     <Card
+      class="cards"
       v-for="card in cards"
       :key="card.id"
       :card="card"
