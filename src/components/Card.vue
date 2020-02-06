@@ -1,5 +1,5 @@
 <template>
-  <div id="card">
+  <a id="card" @click="emitCard">
     <div class="card-header">
       <img :src="card.img" alt="User">
       <div class="card-header-title">
@@ -13,10 +13,11 @@
     <div class="card-link">
       <a class="card-link-action" :href="card.link" target="_blank">{{ card.link ? 'Acessar perfil no Github' : 'Sem acesso ao perfil do desenvolvedor' }}</a>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
+
 export default {
   props: {
     card: {
@@ -26,6 +27,11 @@ export default {
       title: null,
       description: null,
       link: null,
+    }
+  },
+  methods: {
+    emitCard() {
+      this.$emit('card', this.card)
     }
   }
 }

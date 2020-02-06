@@ -4,6 +4,7 @@
       <Input
         label="Usuário no Github"
         id="input-label"
+        place=""
         maxLength="100"
         v-model="formDev.user"
       />
@@ -12,6 +13,7 @@
         class="tcn"
         label="Tecnologia"
         id="input-label"
+        place=""
         maxLength="130"
         v-model="formDev.tecnical"
       />
@@ -23,6 +25,7 @@
 <script>
 
 import Input from '../components/Input.vue';
+import Bus from '../util/bus';
 
 export default {
   components: {
@@ -38,10 +41,8 @@ export default {
       }
     }
   },
-  methods: {
-    sendForm() {
-      console.log(' data ', this.formDev);
-    }
+  mounted() {
+    Bus.$on('card', (value) => this.formDev = value)
   }
 }
 </script>

@@ -7,7 +7,7 @@
         :id="id" 
         :name="id"
         :maxlength="maxLength" 
-        placeholder="" 
+        :placeholder="place" 
         :value="dataValue"
         @input="sendValue">
       </div>
@@ -20,6 +20,7 @@ export default {
     id: String,
     dataValue: [Number, String],
     label: null,
+    place: null,
     maxLength: null
   },
   data() {
