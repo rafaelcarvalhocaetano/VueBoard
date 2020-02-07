@@ -18,8 +18,12 @@
 export default {
   props: {
     id: String,
-    dataValue: [Number, String],
-    label: null,
+    dataValue: {
+      default: () => (undefined)
+    },
+    label: {
+      type: String
+    },
     place: null,
     maxLength: null
   },

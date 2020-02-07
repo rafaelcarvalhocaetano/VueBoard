@@ -1,7 +1,7 @@
 <template>
   <div id="board">
     <div class="form">
-      <FormBoard />
+      <FormBoard :id="cardEdit.id" :form="cardEdit"/>
     </div>
     <div class="card-body">
       <h1>Users</h1>
@@ -10,7 +10,7 @@
         v-for="card in cards"
         :key="card.id"
         :card="card"
-        @card="sendEdit"
+        @card="send"
       />
     </div>
     </div>
@@ -23,8 +23,6 @@ import FormBoard from './FormBoard.vue';
 import Card from '../components/Card.vue';
 import axios from '../service/axios';
 
-import Bus from '../util/bus';
-
 export default {
   components: {
     FormBoard,
@@ -32,8 +30,8 @@ export default {
   },
   data() {
     return {
-      cardEdit: Object,
-      cards: []
+      cards: [],
+      cardEdit: Object
     }
   },
   created() {
@@ -42,8 +40,9 @@ export default {
     }).catch(e => alert(` Error ${ e.message }`));
   },
   methods: {
-    sendEdit(event) {
-      Bus.$emit('card', event)
+    send(event) {
+      console.log("TCL: send -> event", event)
+      this.cardEdit = event;
     }
   }
 
