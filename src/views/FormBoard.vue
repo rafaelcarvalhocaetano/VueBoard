@@ -1,5 +1,5 @@
 <template>
-  <form id="form">
+  <form id="form" >
       <h1>User Github</h1>
       <Input
         label="Usuário no Github"
@@ -15,9 +15,9 @@
         id="input-label"
         place="Tecnologia"
         maxLength="130"
-        :dataValue="form.name"
+        :dataValue="form.description"
       />
-    <button class="btn-submit" type="submit">SEND</button>
+    <button class="btn-submit" type="submit" @click="submited">SEND</button>
   </form>
 </template>
 
@@ -25,6 +25,7 @@
 <script>
 
 import Input from '../components/Input';
+import axios from '../service/axios';
 
 export default {
   components: {
@@ -33,8 +34,23 @@ export default {
   props: {
     id: [String, Number],
     form: {
-      user: null,
-      description: null
+      name: null,
+      img: null,
+      title: null,
+      description: null,
+      link: null
+    }
+  },
+  methods: {
+    submited() {
+      if (this.form.id) {
+        console.log(' data edit ', this.form)
+        axios.put(`boards`, this.form);
+      } else {
+        console.log(' data create ', this.form)
+        axios.post(`boards`, this.form);
+      }
+      
     }
   }
 }

@@ -19,7 +19,7 @@ export default {
   props: {
     id: String,
     dataValue: {
-      default: () => (undefined)
+      type: String
     },
     label: {
       type: String

@@ -5,14 +5,14 @@
     </div>
     <div class="card-body">
       <h1>Users</h1>
-    <div class="cards">
-      <Card
-        v-for="card in cards"
-        :key="card.id"
-        :card="card"
-        @card="send"
-      />
-    </div>
+      <div class="cards">
+        <Card
+          v-for="card in cards"
+          :key="card.id"
+          :card="card"
+          @card="send"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -31,7 +31,13 @@ export default {
   data() {
     return {
       cards: [],
-      cardEdit: Object
+      cardEdit: {
+        name: null,
+        img: null,
+        title: null,
+        description: null,
+        link: null
+      }
     }
   },
   created() {
@@ -41,7 +47,6 @@ export default {
   },
   methods: {
     send(event) {
-      console.log("TCL: send -> event", event)
       this.cardEdit = event;
     }
   }
