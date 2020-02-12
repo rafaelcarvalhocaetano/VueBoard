@@ -1,5 +1,5 @@
 <template>
-  <form id="form" >
+  <form id="form" @submit.prevent="submited">
       <h1>User Github</h1>
       <Input
         label="Usuário no Github"
@@ -7,6 +7,7 @@
         place="User Name"
         maxLength="100"
         :dataValue="form.name"
+        v-model="form.name"
       />
 
       <Input
@@ -15,9 +16,10 @@
         id="input-label"
         place="Tecnologia"
         maxLength="130"
+        v-model="form.description"
         :dataValue="form.description"
       />
-    <button class="btn-submit" type="submit" @click="submited">SEND</button>
+    <button class="btn-submit" type="submit">SEND</button>
   </form>
 </template>
 
@@ -32,10 +34,11 @@ export default {
     Input
   },
   props: {
-    id: [String, Number],
+    id: null,
     form: {
-      name: null,
+      id: null,
       img: null,
+      name: null,
       title: null,
       description: null,
       link: null
@@ -44,10 +47,8 @@ export default {
   methods: {
     submited() {
       if (this.form.id) {
-        console.log(' data edit ', this.form)
         axios.put(`boards`, this.form);
       } else {
-        console.log(' data create ', this.form)
         axios.post(`boards`, this.form);
       }
       
